@@ -58,9 +58,19 @@ Prerequisites
 Note: docker-compose.yml file have image referenc from shared docker hub respository, so to run the application in local environment just download repository from git.
 Open terminal and nevigate to this path run below command, it will bring up application.
 
+# Screenshots of the application in action
+├── Login screen (Login-Screen.png)
+├── Dashboard (User-Dashboard.png)
+├── Add User (User-add.png)
+└── Edit User (User-edit.png)
+
 # Download all images, Build and Start All Services
-├── docker-compose up -d //if docker Compose V1
-├── docker compose up -d //if docker Compose V2 (without hyphen)
+├── docker compose --env-file .env.deve up --build -d  (when we are using development environment build, It will run Frontend on 4201 port)
+├── docker compose --env-file .env.test up --build -d  (when we are using testing environment build, It will run Frontend on 4202 port)
+├── docker compose --env-file .env.prod up --build -d  (when we are using production environment build, It will run Frontend on 4203 port)
+├── docker-compose up -d (This command was also enough in case we are not using environment variables.)
 ├── open http://localhost:8080
 ├── login screen will be prefilled credential Admin/Admin1
 └── From dashboard click Add button, fill form and click Save. Next time this user credential can be use for login.
+
+

@@ -1,3 +1,4 @@
+//User interface for CREATE, EDIT actions
 export interface iUser {
   id: string;
   userId: string;
@@ -6,6 +7,7 @@ export interface iUser {
   isActive: boolean;
 }
 
+//User interface to handle API response as mongo db have auto-generated _id
 export interface User extends iUser {
   _id: string;
 }
