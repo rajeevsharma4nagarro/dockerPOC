@@ -36,21 +36,31 @@ Database (MongoDB Tier)
 ├── NoSQL database for storing user data
 └── Data persists using Docker volumes
 
-
-# Docker & Compose Setup
-
-Prerequisites
-├── Docker
-└── Docker Compose
-
 # Docker public repositories
 ├── rajeevsharma4nagarro/mongo
 ├── rajeevsharma4nagarro/usersapi
 └── rajeevsharma4nagarro/usersapp
 
 # GitHub public repositories
+├── https://github.com/rajeevsharma4nagarro/dockerPOC
+└── https://github.com/rajeevsharma4nagarro/dockerPOC.git
 
+
+# Docker & Compose Setup
+
+Prerequisites
+├── Angular CLI: 20
+├── Node: 22
+├── Package Manager: npm 10
+├── Docker: 20 
+└── Docker Compose: V2
+
+Note: docker-compose.yml file have image referenc from shared docker hub respository, so to run the application in local environment just download repository from git.
+Open terminal and nevigate to this path run below command, it will bring up application.
 
 # Download all images, Build and Start All Services
 ├── docker-compose up -d //if docker Compose V1
-└── docker compose up -d //if docker Compose V2 (without hyphen)
+├── docker compose up -d //if docker Compose V2 (without hyphen)
+├── open http://localhost:8080
+├── login screen will be prefilled credential Admin/Admin1
+└── From dashboard click Add button, fill form and click Save. Next time this user credential can be use for login.
