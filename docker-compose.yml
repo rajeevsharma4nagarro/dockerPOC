@@ -1,0 +1,44 @@
+services:
+    usersapp:
+        build: ./usersapp
+        image: rajeevsharma4nagarro/usersapp:latest
+        container_name: usersapp
+        ports:
+            - "8080:80"
+        depends_on:
+            - usersapi
+        networks:
+            - my-network
+            
+    usersapi:
+        build: ./usersapi
+        image: rajeevsharma4nagarro/usersapi:latest
+        container_name: usersapi
+        ports:
+            - "3000:3000"
+        depends_on:
+            - mongodb
+        networks:
+            - my-network
+            
+    mongodb:
+        image: rajeevsharma4nagarro/mongo
+        container_name: mongodb
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: admin
+            MONGO_INITDB_ROOT_PASSWORD: admin
+        ports:
+            - "27017:27017"
+        volumes:
+            - mongo-data:/data/db
+        networks:
+            - my-network
+
+volumes:
+    mongo-data:
+        name: mongo-data
+
+networks:
+    my-network:
+        name: user-network
+        driver: bridge

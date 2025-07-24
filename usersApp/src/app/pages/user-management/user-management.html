@@ -1,0 +1,25 @@
+<div class="form-container">
+  <h2>{{ isEdit ? 'Edit User' : 'Add User' }}</h2>
+  <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <label>User Id</label>
+    <input type="text" formControlName="userId" />
+
+    <label>Password</label>
+    <input type="password" formControlName="password" />
+
+    <label>Role</label>
+    <select formControlName="userType">
+        <option value="SuperUser">SuperUser</option>
+        <option value="Admin">Admin</option>
+        <option value="User">User</option>
+    </select>
+    
+    <label class="lblActive">Active</label>
+    <input type="checkbox" formControlName="isActive" />
+
+    <button type="button" (click)="router.navigate(['/home']);">Cancel</button>
+    <button type="submit">{{ isEdit ? 'Update' : 'Save' }}</button>
+
+    <input *ngif="isEdit" type="hidden" formControlName="_id" />
+  </form>
+</div>

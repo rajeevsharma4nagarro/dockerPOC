@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="dashboard">
+  <h2>User Dashboard</h2>
+  <button class="add-btn" [routerLink]="['/add']">Add User</button>
+  <table>
+    <thead>
+      <tr>
+        <th>UserId</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.userId }}</td>
+        <td>{{ user.userType }}</td>
+        <td>{{ user.isActive }}</td>
+        <td>
+          <ng-container>
+            <!-- <button class="view">View</button> *ngIf="user.hasOwnProperty('_id')" -->
+            <button class="edit" (click)="edit(user._id)">Edit</button>
+            <button class="delete" (click)="delete(user._id)">Delete</button>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
