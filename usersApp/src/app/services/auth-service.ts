@@ -19,12 +19,14 @@ export class AuthService {
     return localStorage.getItem('token') !== null && localStorage.getItem('token') !== '';
   }
 
-  setToken(token: string): void {
+  setToken(token: string, userDetails?: any): void {
     localStorage.setItem('token', token);
+    localStorage.setItem('userDetails', JSON.stringify(userDetails));
   }
 
   clearToken(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('userDetails');
   }
 
   getToken(): string| null {

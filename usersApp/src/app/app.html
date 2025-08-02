@@ -1,2 +1,4 @@
-<header></header>
-<router-outlet />
+<app-header *ngIf="headerVisible"></app-header>
+<router-outlet
+  (activate)="onActivate($event)"
+></router-outlet>

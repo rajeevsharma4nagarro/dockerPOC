@@ -14,14 +14,14 @@ export class Header {
 
   user: iUser | undefined;
   constructor(private globalService: GlobalService, private authService: AuthService, private route : Router) {
-    globalService.userLoginSubject.subscribe(x => {
+    this.globalService.userLoginSubject.subscribe(x => {
       this.user = x;
     });
   }
 
   logout() {
     this.authService.clearToken();
-    this.globalService.userLoginSubject.next(undefined);
+    this.user = undefined;
     this.route.navigate(['/']);
   }
 }

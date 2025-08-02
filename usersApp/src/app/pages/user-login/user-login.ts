@@ -27,8 +27,7 @@ export class UserLogin {
       this.authService.login(this.loginForm.value).subscribe(
         {
           next:(res) => {
-            this.authService.setToken(res.token);
-            this.globalService.userLoginSubject.next(this.loginForm.value);
+            this.authService.setToken(res.token, this.loginForm.value);
             this.router.navigate(['/home']);
           },
           error: (e) => {
