@@ -34,7 +34,7 @@ export class UserManagement implements OnInit {
       this.isEdit = true;
       this.userService.getUserById(this.id).subscribe((user: any) => {
         if (user) {
-          this.userForm.patchValue(user);
+          this.userForm.patchValue(user.data);
         }
       });
     }

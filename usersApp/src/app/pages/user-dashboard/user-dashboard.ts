@@ -23,8 +23,8 @@ export class UserDashboard implements OnInit {
 
   loadUsers() {
     this.service.getUsers().subscribe({
-      next: (data: User[]) => {
-        this.users = data;
+      next: (res: any) => {
+        this.users = res.data;
       },
       error: (e) => {
         console.log(e);

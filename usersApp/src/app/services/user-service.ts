@@ -32,3 +32,4 @@ export class UserService {
     return this.http.patch<iUser>(`${ this.globalService.apiUrl }/update`, value);
   }
 }
+ 

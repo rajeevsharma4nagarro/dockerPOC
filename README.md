@@ -3,6 +3,7 @@
 A multi-service user management application built with below technologies:
 ├── Angular 20.*.* (Frontend UI)
 ├── Node.js + Express (Backend REST API)
+├── Redis (Caching)
 ├── MongoDB (Database)
 ├── JWT Authentication and token based api request
 └── Docker, Dockerfile & Docker-Compose (for containerization)
