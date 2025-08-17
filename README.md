@@ -10,11 +10,22 @@ A multi-service user management application built with below technologies:
 	
 # Project Structure
 project-root/
-├── Brief overview-User Management System.pdf
-├── docker-compose.yml (composed with shared repository image location)
 ├── usersApp (frontend UI developed in Angular20)
 ├── usersAPI (backend REST API developed in Node.js + Express)
-└── README.md	
+├── .env.deve
+├── .env.prod
+├── .gitignore
+├── Dashboard-Dataload-from-cache.png
+├── Dashboard-Dataload-from-database.png
+├── docker-compose.yml (composed with shared repository image location
+├── Brief overview-User Management System.pdf
+├── Login-Screen.png
+├── README.md
+├── User Management System - Advance.pdf
+├── User-add.png
+├── User-Dashboard.png
+└── User-edit.png
+	
 
 # Project Features
 
@@ -37,12 +48,17 @@ Database (MongoDB Tier)
 ├── NoSQL database for storing user data
 └── Data persists using Docker volumes
 
-# Docker public repositories
-├── rajeevsharma4nagarro/mongo
-├── rajeevsharma4nagarro/usersapi
-└── rajeevsharma4nagarro/usersapp
+Redis (Data Caching)
+├── It will case user data  on first calls
+├── It will persist data for 60 seconds
+├── If any Add/Delete action taken then cache will refresh with new data
+└── For testing in api response source will show db/cache 
 
-# GitHub public repositories
+# Docker public repositories
+├── rajeevsharma4nagarro/poc-api-service
+└── rajeevsharma4nagarro/poc-app-ui
+
+# GitHub public repositories (branch : advance-POC)
 ├── https://github.com/rajeevsharma4nagarro/dockerPOC
 └── https://github.com/rajeevsharma4nagarro/dockerPOC.git
 
