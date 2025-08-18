@@ -1,6 +1,6 @@
 services:
     app-ui:
-        build: ./usersapp
+        image: rajeevsharma4nagarro/poc-app-ui:Latest
         container_name: app-ui
         ports:
             - "${FRONTEND_PORT}:80"
@@ -10,7 +10,7 @@ services:
             - app-network
             
     api-service:
-        build: ./usersapi
+        image: rajeevsharma4nagarro/poc-api-service:Latest
         container_name: api-service
         ports:
             - "3000:3000"
