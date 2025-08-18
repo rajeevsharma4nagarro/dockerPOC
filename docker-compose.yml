@@ -1,6 +1,8 @@
 services:
     app-ui:
-        image: rajeevsharma4nagarro/poc-app-ui:Latest
+        build:
+            context: ./usersapp           # Path to the app directory
+            dockerfile: Dockerfile        # Optional if named 'Dockerfile'
         container_name: app-ui
         ports:
             - "${FRONTEND_PORT}:80"
@@ -10,7 +12,9 @@ services:
             - app-network
             
     api-service:
-        image: rajeevsharma4nagarro/poc-api-service:Latest
+        build:
+            context: ./usersapi           # Path to the app directory
+            dockerfile: Dockerfile        # Optional if named 'Dockerfile'        
         container_name: api-service
         ports:
             - "3000:3000"
