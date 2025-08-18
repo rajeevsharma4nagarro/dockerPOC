@@ -25,4 +25,4 @@ jobs:
           context: ./usersApp
           file: ./usersApp/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/poc-app-ui:v2
+          tags: ${{ secrets.DOCKER_NAMESPACE }}/poc-app-ui:v2
