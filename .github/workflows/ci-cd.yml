@@ -26,3 +26,11 @@ jobs:
           file: ./usersApp/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_NAMESPACE }}/poc-app-ui:v2
+      # 4. Build Node API image
+      - name: Build and push Node API
+        uses: docker/build-push-action@v5
+        with:
+          context: ./usersAPI
+          file: ./usersAPI/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_NAMESPACE }}/poc-api-service:v2   
