@@ -15,6 +15,8 @@ project-root/
 ├── .env.deve
 ├── .env.prod
 ├── .gitignore
+├── ci-cd.yml.txt
+├── CI-CD-Job.png
 ├── Dashboard-Dataload-from-cache.png
 ├── Dashboard-Dataload-from-database.png
 ├── docker-compose.yml (composed with shared repository image location
@@ -79,7 +81,9 @@ Open terminal and nevigate to this path run below command, it will bring up appl
 ├── Login screen (Login-Screen.png)
 ├── Dashboard (User-Dashboard.png)
 ├── Add User (User-add.png)
-└── Edit User (User-edit.png)
+├── Edit User (User-edit.png)
+├── Dashboard-Dataload-from-cache.png
+└── Dashboard-Dataload-from-database.png
 
 # Download all images, Build and Start All Services
 ├── docker compose --env-file .env.deve up --build -d  (when we are using development environment build, It will run Frontend on 4201 port)
@@ -90,4 +94,15 @@ Open terminal and nevigate to this path run below command, it will bring up appl
 ├── login screen will be prefilled credential Admin/Admin1
 └── From dashboard click Add button, fill form and click Save. Next time this user credential can be use for login.
 
+# GitHub CI/CD Pipe line configuration
+├── Make changes in any branch	
+├── Create PR for source branch (main) which is set as default branch
+├── CI/CD Action workflow job (Docker Advance CI-CD Pipe line POC : ci-cd.yml) is configured on push changes in main branch
+├── I have configured jobs: build-and-deploy which run ubuntu:latest
+├── Steps I covered in ci/cd pipe line:
+├── ── Check out git branch
+├── ── Login Docker hub
+├── ── Build UI Application and push image with tag V{$ github.run_number } and Latest
+├── ── Build Api Service and push image with tag V{$ github.run_number } and Latest
+├── Now Latest image will published on docker repository
 
