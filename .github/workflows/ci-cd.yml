@@ -25,7 +25,7 @@ jobs:
           context: ./usersApp
           file: ./usersApp/Dockerfile
           push: true
-          tags: 
+          tags: |
             ${{ secrets.DOCKER_NAMESPACE }}/poc-app-ui:v${{ github.run_number }}
             ${{ secrets.DOCKER_NAMESPACE }}/poc-app-ui:Latest
       # 4. Build Node API image
@@ -35,6 +35,6 @@ jobs:
           context: ./usersAPI
           file: ./usersAPI/Dockerfile
           push: true
-          tags: 
+          tags: |
             ${{ secrets.DOCKER_NAMESPACE }}/poc-api-service:v${{ github.run_number }}
             ${{ secrets.DOCKER_NAMESPACE }}/poc-api-service:Latest
