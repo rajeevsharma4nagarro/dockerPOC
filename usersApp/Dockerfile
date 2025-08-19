@@ -1,5 +1,5 @@
 # Step 1: Build Angular app
-FROM node:20 AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 COPY package.json package-lock.json ./
